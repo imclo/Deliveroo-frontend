@@ -1,3 +1,5 @@
+import Cart from "./Cart";
+
 const Content = ({ categories, mealsTitle }) => {
   const reducingText = (text) => {
     if (text.length > 55) {
@@ -70,6 +72,7 @@ const Content = ({ categories, mealsTitle }) => {
             })}
           </div>
         </div>
+        <Cart />
       </main>
     </>
   );
