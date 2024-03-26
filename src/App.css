@@ -111,6 +111,11 @@ main {
   width: 50%;
 }
 
+.Menu:hover {
+  box-shadow: 0px 0 30px rgba(163, 162, 162, 0.3);
+  transition: 0.3s;
+}
+
 .MenuChoices {
   justify-content: space-between;
   align-items: flex-start;
@@ -190,12 +195,6 @@ main {
 
 /* CART */
 
-.Cart {
-  width: 350px;
-  position: sticky;
-  top: 0;
-}
-
 .Cart-card {
   box-shadow: 0px 22px 24px 0px rgba(46, 51, 51, 0.07);
   background: white;
@@ -205,6 +204,9 @@ main {
   flex-direction: column;
   align-items: stretch;
   margin: 30px 0;
+  width: 350px;
+  position: sticky;
+  top: 0;
 }
 
 .Cart-validate {
@@ -240,7 +242,6 @@ main {
 }
 
 .Cart-line {
-  display: flex;
   align-items: flex-start;
   padding: 12px 12px;
 }
@@ -264,7 +265,7 @@ main {
 
 .choiceLine {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 23px;
   display: flex;
   justify-content: space-between;
 }
@@ -284,9 +285,80 @@ main {
   font-size: 19px;
   color: #434848;
 }
-
 .d-flex space-between choiceLine span {
   font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* FOOTER  */
+
+footer {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 90px;
+}
+
+footer span {
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .mealsDescription {
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1124px) {
+  .MenuItem {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1124px) {
+  .Menu {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 885px) {
+  .RestaurantInfos-center {
+    flex-direction: column-reverse;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .RestaurantInfos-cover {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+  .RestaurantInfos-texts {
+    padding: 30px;
+  }
+  h1 {
+    font-size: 24px !important;
+  }
+  p {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .Cart {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .Menu {
+    margin-right: 0;
+  }
 }
 
 /* FONTS */

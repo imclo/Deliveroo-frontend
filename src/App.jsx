@@ -5,6 +5,7 @@ import "./assets/icons/style.css";
 
 import Header from "./components/Header";
 import Content from "./components/Content";
+import Footer from "./components/Footer";
 
 function App() {
   const [data, setData] = useState({});
@@ -40,6 +41,7 @@ function App() {
         totalBasket={totalBasket}
         setTotalBasket={setTotalBasket}
       />
+      <Footer />
     </>
   );
 }
