@@ -5,13 +5,12 @@ import "./assets/icons/style.css";
 
 import Header from "./components/Header";
 import Content from "./components/Content";
-import Cart from "./components/Cart";
 
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const [items, setItems] = useState([]);
+  const [choices, setChoices] = useState([]);
   const [totalBasket, setTotalBasket] = useState(0);
 
   const fetchData = async () => {
@@ -36,9 +35,11 @@ function App() {
       />
       <Content
         categories={data.categories}
-        mealsTitle={data.categories.meals}
+        choices={choices}
+        setChoices={setChoices}
+        totalBasket={totalBasket}
+        setTotalBasket={setTotalBasket}
       />
-      <Cart />
     </>
   );
 }

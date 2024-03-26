@@ -1,6 +1,12 @@
 import Cart from "./Cart";
 
-const Content = ({ categories, mealsTitle }) => {
+const Content = ({
+  categories,
+  choices,
+  setChoices,
+  totalBasket,
+  setTotalBasket,
+}) => {
   const reducingText = (text) => {
     if (text.length > 55) {
       return text.substring(0, 55) + "...";
@@ -25,7 +31,43 @@ const Content = ({ categories, mealsTitle }) => {
                     {elem.meals.map((items) => {
                       return (
                         <>
-                          <div className="Menu">
+                          <div
+                            className="Menu"
+                            onClick={() => {
+                              // console.log(choices);
+                              let copy = [...choices];
+                              let isProductFound = false;
+                              for (let i = 0; i < copy.length; i++) {
+                                // console.log(i);
+                                if (copy[i].title === items.title) {
+                                  copy[i].quantity++;
+                                  copy[i].totalPrice =
+                                    items.price * copy[i].quantity;
+
+                                  setTotalBasket(copy[i].totalPrice);
+                                  isProductFound = true;
+                                  break;
+                                }
+                              }
+                              if (isProductFound === false) {
+                                copy.push({
+                                  title: items.title,
+                                  price: Number(items.price),
+                                  totalPrice: Number(items.price),
+                                  quantity: 1,
+                                });
+
+                                setTotalBasket(totalBasket + copy.totalPrice);
+                              }
+
+                              setChoices(copy);
+                              let subtotal = 0;
+                              for (let i = 0; i < copy.length; i++) {
+                                subtotal += copy[i].totalPrice;
+                                setTotalBasket(subtotal);
+                              }
+                            }}
+                          >
                             <div className="MenuChoices">
                               <div className="MenuColumn1">
                                 <div className="MenuChoicesText">
@@ -72,7 +114,12 @@ const Content = ({ categories, mealsTitle }) => {
             })}
           </div>
         </div>
-        <Cart />
+        <Cart
+          choices={choices}
+          totalBasket={totalBasket}
+          setTotalBasket={setTotalBasket}
+          setChoices={setChoices}
+        />
       </main>
     </>
   );

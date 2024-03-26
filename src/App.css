@@ -242,53 +242,51 @@ main {
 .Cart-line {
   display: flex;
   align-items: flex-start;
-  padding: 16px 0;
+  padding: 12px 12px;
 }
 
 .Cart-counter {
-  display: flex;
-  align-items: center;
   margin-right: 10px;
   color: #808484;
 }
 
-.Cart-counter span {
-  min-width: 16px;
-  text-align: center;
+.choiceTitle {
+  line-height: 20px;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #434848;
 }
 
-.Cart-amount {
-  width: 85px;
-  text-align: right;
+.btn-quantity {
+  height: 20px;
+  width: 20px;
+  margin: 0 7px;
 }
 
-.Cart-item-name {
-  flex: 1;
-}
-
-.Cart-results {
-  margin: 0 10px;
-  padding: 10px 0;
-  border-bottom: 1px solid #d1d7d7;
-}
-
-.Cart-result-name {
-  flex: 1;
-}
-
-.Cart-result-line {
+.choiceLine {
+  margin-top: 15px;
+  margin-bottom: 15px;
   display: flex;
-  align-items: center;
-  padding: 8px 0;
+  justify-content: space-between;
 }
 
-.Cart-total {
-  display: flex;
-  align-items: flex-start;
-  padding: 20px 0;
-  margin: 0 10px;
-  font-weight: 600;
+.underChoices span {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #434848;
+}
+
+.basketPriceQty {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #434848;
+}
+
+.basketTotal {
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 19px;
+  color: #434848;
+}
+
+.d-flex space-between choiceLine span {
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 /* FONTS */
@@ -331,4 +329,53 @@ main {
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+/* FLEXBOX */
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+.space-between {
+  justify-content: space-between;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.display-none {
+  display: none;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex2 {
+  flex: 2;
+}
+
+.white {
+  background-color: white;
+}
+
+.bold {
+  font-weight: bold;
 }
