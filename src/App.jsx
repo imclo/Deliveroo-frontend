@@ -15,7 +15,9 @@ function App() {
   const [totalBasket, setTotalBasket] = useState(0);
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:3200/");
+    const response = await axios.get(
+      "https://site--deliveroo-backend--chloe-projects--imcl-j5xj.code.run/"
+    );
     // console.log(response.data);
     setData(response.data);
     setIsLoading(false);
