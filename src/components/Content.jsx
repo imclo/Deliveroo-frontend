@@ -8,8 +8,8 @@ const Content = ({
   setTotalBasket,
 }) => {
   const reducingText = (text) => {
-    if (text.length > 55) {
-      return text.substring(0, 55) + "...";
+    if (text.length > 30) {
+      return text.substring(0, 30) + "...";
     } else {
       return text;
     }
